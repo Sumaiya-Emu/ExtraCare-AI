@@ -1,0 +1,428 @@
+[
+  {
+    "_disclaimer": "Curated educational ingredient-safety starter dataset. Exposure route, diagnosis status, label evidence, and source verification are required before high-severity personalized output. Contested or general sources may support context but cannot drive an absolute restriction or fabricated numeric threshold."
+  },
+  {
+    "ingredient": "High Fructose Corn Syrup",
+    "category": "sweetener",
+    "flagged_conditions": [
+      "Liver Disease (incl. Fatty Liver)",
+      "Diabetes Mellitus (Type 2)",
+      "Gout / Hyperuricemia"
+    ],
+    "mechanism": "Rapidly metabolized in the liver, increasing hepatic fat synthesis, worsening insulin resistance, and raising uric acid production.",
+    "severity": "caution_to_danger_by_quantity",
+    "source": "General nutrition science, not independently re-verified",
+    "restriction_rules": [
+      {
+        "condition": "Liver Disease (incl. Fatty Liver)",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Rapidly metabolized in the liver, increasing hepatic fat synthesis, worsening insulin resistance, and raising uric acid production.",
+        "source": "General nutrition science, not independently re-verified"
+      },
+      {
+        "condition": "Diabetes Mellitus (Type 2)",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Rapidly metabolized in the liver, increasing hepatic fat synthesis, worsening insulin resistance, and raising uric acid production.",
+        "source": "General nutrition science, not independently re-verified"
+      },
+      {
+        "condition": "Gout / Hyperuricemia",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Rapidly metabolized in the liver, increasing hepatic fat synthesis, worsening insulin resistance, and raising uric acid production.",
+        "source": "General nutrition science, not independently re-verified"
+      }
+    ]
+  },
+  {
+    "ingredient": "Sodium Chloride (Salt) / High-Sodium Preservatives",
+    "category": "preservative/seasoning",
+    "flagged_conditions": [
+      "Hypertension",
+      "Chronic Kidney Disease (CKD)",
+      "Heart Disease (Cardiovascular)"
+    ],
+    "mechanism": "Increases fluid retention and blood pressure, and accelerates decline in kidney filtration capacity.",
+    "severity": "caution_to_danger_by_quantity",
+    "source": "AHA / WHO sodium guidance",
+    "restriction_rules": [
+      {
+        "condition": "Hypertension",
+        "classification": "partially_restricted",
+        "tolerated_dose": "Use the stricter condition-specific daily sodium target retrieved from the clinical knowledge base.",
+        "danger_threshold": "Use the condition-specific danger threshold retrieved from the clinical knowledge base; do not infer from ingredient presence alone.",
+        "mechanism": "Increases fluid retention and blood pressure, and accelerates decline in kidney filtration capacity.",
+        "source": "AHA / WHO sodium guidance"
+      },
+      {
+        "condition": "Chronic Kidney Disease (CKD)",
+        "classification": "partially_restricted",
+        "tolerated_dose": "Use the stricter condition-specific daily sodium target retrieved from the clinical knowledge base.",
+        "danger_threshold": "Use the condition-specific danger threshold retrieved from the clinical knowledge base; do not infer from ingredient presence alone.",
+        "mechanism": "Increases fluid retention and blood pressure, and accelerates decline in kidney filtration capacity.",
+        "source": "AHA / WHO sodium guidance"
+      },
+      {
+        "condition": "Heart Disease (Cardiovascular)",
+        "classification": "partially_restricted",
+        "tolerated_dose": "Use the stricter condition-specific daily sodium target retrieved from the clinical knowledge base.",
+        "danger_threshold": "Use the condition-specific danger threshold retrieved from the clinical knowledge base; do not infer from ingredient presence alone.",
+        "mechanism": "Increases fluid retention and blood pressure, and accelerates decline in kidney filtration capacity.",
+        "source": "AHA / WHO sodium guidance"
+      }
+    ]
+  },
+  {
+    "ingredient": "Potassium Chloride / Potassium-based Additives",
+    "category": "salt substitute/preservative",
+    "flagged_conditions": [
+      "Chronic Kidney Disease (CKD)"
+    ],
+    "mechanism": "Reduced kidney function and some medications can increase susceptibility to hyperkalemia; actual risk depends on serum potassium, kidney function, total intake, and medication context.",
+    "severity": "caution_to_danger_by_context",
+    "source": "General clinical reference (CKD hyperkalemia risk)",
+    "restriction_rules": [
+      {
+        "condition": "Chronic Kidney Disease (CKD)",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Reduced kidney function and some medications can increase susceptibility to hyperkalemia; actual risk depends on serum potassium, kidney function, total intake, and medication context.",
+        "source": "General clinical reference (CKD hyperkalemia risk)"
+      }
+    ]
+  },
+  {
+    "ingredient": "Salicylic Acid",
+    "category": "cosmetic active (BHA exfoliant)",
+    "flagged_conditions": [
+      "Pregnancy"
+    ],
+    "mechanism": "Pregnancy safety depends on formulation, concentration, body area, frequency, and systemic exposure. Topical exposure should not be treated as equivalent to oral salicylate therapy.",
+    "severity": "caution",
+    "source": "Standard dermatology/OB pregnancy guidance",
+    "restriction_rules": [
+      {
+        "condition": "Pregnancy",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Pregnancy safety depends on formulation, concentration, body area, frequency, and systemic exposure. Topical exposure should not be treated as equivalent to oral salicylate therapy.",
+        "source": "Standard dermatology/OB pregnancy guidance"
+      }
+    ]
+  },
+  {
+    "ingredient": "Retinoid Derivatives (Retinol, Tretinoin, Adapalene)",
+    "category": "cosmetic active",
+    "flagged_conditions": [
+      "Pregnancy"
+    ],
+    "mechanism": "Systemic retinoids are established teratogens. Topical retinoids have much lower systemic exposure but are generally avoided during pregnancy as a precaution; route and formulation matter.",
+    "severity": "caution",
+    "source": "Standard dermatology/OB pregnancy guidance",
+    "restriction_rules": [
+      {
+        "condition": "Pregnancy",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Systemic retinoids are established teratogens. Topical retinoids have much lower systemic exposure but are generally avoided during pregnancy as a precaution; route and formulation matter.",
+        "source": "Standard dermatology/OB pregnancy guidance"
+      }
+    ]
+  },
+  {
+    "ingredient": "Caffeine",
+    "category": "stimulant",
+    "flagged_conditions": [
+      "Pregnancy",
+      "Hypertension"
+    ],
+    "mechanism": "Crosses the placenta with slowed fetal clearance; also causes a short-term rise in blood pressure and heart rate.",
+    "severity": "caution",
+    "source": "General OB / AHA guidance",
+    "restriction_rules": [
+      {
+        "condition": "Pregnancy",
+        "classification": "partially_restricted",
+        "tolerated_dose": "Less than 200 mg/day",
+        "danger_threshold": null,
+        "mechanism": "Crosses the placenta with slowed fetal clearance; also causes a short-term rise in blood pressure and heart rate.",
+        "source": "ACOG pregnancy caffeine guidance"
+      },
+      {
+        "condition": "Hypertension",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Crosses the placenta with slowed fetal clearance; also causes a short-term rise in blood pressure and heart rate.",
+        "source": "General OB / AHA guidance"
+      }
+    ]
+  },
+  {
+    "ingredient": "Monosodium Glutamate (MSG)",
+    "category": "flavor enhancer",
+    "flagged_conditions": [
+      "Hypertension"
+    ],
+    "mechanism": "Contributes meaningfully to total sodium intake despite tasting less salty than table salt.",
+    "severity": "caution",
+    "source": "General nutrition reference",
+    "restriction_rules": [
+      {
+        "condition": "Hypertension",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Contributes meaningfully to total sodium intake despite tasting less salty than table salt.",
+        "source": "General nutrition reference"
+      }
+    ]
+  },
+  {
+    "ingredient": "Partially Hydrogenated Oils / Trans Fats",
+    "category": "fat",
+    "flagged_conditions": [
+      "Dyslipidemia",
+      "Liver Disease (incl. Fatty Liver)",
+      "Heart Disease (Cardiovascular)"
+    ],
+    "mechanism": "Raises LDL cholesterol while lowering HDL, and promotes hepatic fat accumulation.",
+    "severity": "danger",
+    "source": "AHA dietary guidance",
+    "restriction_rules": [
+      {
+        "condition": "Dyslipidemia",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Raises LDL cholesterol while lowering HDL, and promotes hepatic fat accumulation.",
+        "source": "AHA dietary guidance"
+      },
+      {
+        "condition": "Liver Disease (incl. Fatty Liver)",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Raises LDL cholesterol while lowering HDL, and promotes hepatic fat accumulation.",
+        "source": "AHA dietary guidance"
+      },
+      {
+        "condition": "Heart Disease (Cardiovascular)",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Raises LDL cholesterol while lowering HDL, and promotes hepatic fat accumulation.",
+        "source": "AHA dietary guidance"
+      }
+    ]
+  },
+  {
+    "ingredient": "Purine-rich Extracts (Yeast Extract, Meat Extract)",
+    "category": "flavor base",
+    "flagged_conditions": [
+      "Gout / Hyperuricemia"
+    ],
+    "mechanism": "Metabolized into uric acid, which can precipitate in joints and trigger gout flares.",
+    "severity": "caution",
+    "source": "General clinical reference (gout)",
+    "restriction_rules": [
+      {
+        "condition": "Gout / Hyperuricemia",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Metabolized into uric acid, which can precipitate in joints and trigger gout flares.",
+        "source": "General clinical reference (gout)"
+      }
+    ]
+  },
+  {
+    "ingredient": "Alcohol (Ethanol, incl. mouthwash/food extracts)",
+    "category": "solvent/flavoring",
+    "flagged_conditions": [
+      "Pregnancy",
+      "Liver Disease (incl. Fatty Liver)",
+      "Gout / Hyperuricemia"
+    ],
+    "mechanism": "Directly hepatotoxic and raises uric acid; no safe threshold established in pregnancy.",
+    "severity": "danger",
+    "source": "General clinical reference (hepatology/OB)",
+    "restriction_rules": [
+      {
+        "condition": "Pregnancy",
+        "classification": "fully_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": "No safe pregnancy threshold is established in this demo knowledge base.",
+        "mechanism": "Directly hepatotoxic and raises uric acid; no safe threshold established in pregnancy.",
+        "source": "General clinical reference (hepatology/OB)"
+      },
+      {
+        "condition": "Liver Disease (incl. Fatty Liver)",
+        "classification": "fully_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Directly hepatotoxic and raises uric acid; no safe threshold established in pregnancy.",
+        "source": "General clinical reference (hepatology/OB)"
+      },
+      {
+        "condition": "Gout / Hyperuricemia",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Directly hepatotoxic and raises uric acid; no safe threshold established in pregnancy.",
+        "source": "General clinical reference (hepatology/OB)"
+      }
+    ]
+  },
+  {
+    "ingredient": "Hydroquinone",
+    "category": "cosmetic active (skin-lightening agent)",
+    "flagged_conditions": [
+      "Pregnancy"
+    ],
+    "mechanism": "Safety during pregnancy has not been established; dermatology guidance generally advises avoiding it unless directed by a physician. Prolonged use can also cause ochronosis (skin darkening) and increased sun sensitivity in any user.",
+    "severity": "caution_to_danger_in_pregnancy",
+    "source": "Standard dermatology pregnancy guidance, cross-checked",
+    "restriction_rules": [
+      {
+        "condition": "Pregnancy",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Safety during pregnancy has not been established; dermatology guidance generally advises avoiding it unless directed by a physician. Prolonged use can also cause ochronosis (skin darkening) and increased sun sensitivity in any user.",
+        "source": "Standard dermatology pregnancy guidance, cross-checked"
+      }
+    ]
+  },
+  {
+    "ingredient": "Oxybenzone / Benzophenone-3 (chemical UV filter)",
+    "category": "cosmetic active (sunscreen)",
+    "flagged_conditions": [
+      "Pregnancy"
+    ],
+    "mechanism": "Genuinely contested: some research (EWG-cited studies) suggests endocrine-disrupting activity and links to lower birth weight when exposure occurs in pregnancy; dermatology sources and past FDA reviews found no conclusive evidence of harm at typical use levels. Flagged as a caution pending clearer evidence, not a settled danger.",
+    "severity": "caution",
+    "source": "Contested — EWG cites concern, FDA/dermatology find no conclusive harm",
+    "restriction_rules": [
+      {
+        "condition": "Pregnancy",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Genuinely contested: some research (EWG-cited studies) suggests endocrine-disrupting activity and links to lower birth weight when exposure occurs in pregnancy; dermatology sources and past FDA reviews found no conclusive evidence of harm at typical use levels. Flagged as a caution pending clearer evidence, not a settled danger.",
+        "source": "Contested — EWG cites concern, FDA/dermatology find no conclusive harm"
+      }
+    ]
+  },
+  {
+    "ingredient": "Parabens (Methylparaben, Propylparaben, etc.)",
+    "category": "cosmetic preservative",
+    "flagged_conditions": [
+      "Pregnancy"
+    ],
+    "mechanism": "Weak estrogen-mimicking activity has been observed in lab studies; regulatory bodies (FDA, EU) currently regard typical cosmetic concentrations as safe, but the underlying research is still debated, so a pregnancy-specific caution is reasonable rather than dismissing the question.",
+    "severity": "info",
+    "source": "Contested — regulators call current levels safe, research ongoing",
+    "restriction_rules": [
+      {
+        "condition": "Pregnancy",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Weak estrogen-mimicking activity has been observed in lab studies; regulatory bodies (FDA, EU) currently regard typical cosmetic concentrations as safe, but the underlying research is still debated, so a pregnancy-specific caution is reasonable rather than dismissing the question.",
+        "source": "Contested — regulators call current levels safe, research ongoing"
+      }
+    ]
+  },
+  {
+    "ingredient": "Sulfites / Sulfiting Agents (E220-228: Sodium/Potassium Bisulfite, Metabisulfite)",
+    "category": "preservative",
+    "flagged_conditions": [
+      "Asthma"
+    ],
+    "mechanism": "Releases sulfur dioxide gas, which can trigger bronchoconstriction (wheezing, chest tightness) in an estimated 5-10% of people with asthma. Common in dried fruit, wine/beer, pickled foods, and processed shrimp.",
+    "severity": "caution_to_danger_if_sensitive",
+    "source": "AAFA / WebMD asthma-sulfite guidance",
+    "restriction_rules": [
+      {
+        "condition": "Asthma",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Releases sulfur dioxide gas, which can trigger bronchoconstriction (wheezing, chest tightness) in an estimated 5-10% of people with asthma. Common in dried fruit, wine/beer, pickled foods, and processed shrimp.",
+        "source": "AAFA / WebMD asthma-sulfite guidance"
+      }
+    ]
+  },
+  {
+    "ingredient": "Soy Protein / Soy Isoflavones (concentrated form, e.g. supplements)",
+    "category": "goitrogenic compound",
+    "flagged_conditions": [
+      "Thyroid Disorder (Hypo/Hyperthyroidism)"
+    ],
+    "mechanism": "Can inhibit thyroid peroxidase activity and, in concentrated amounts, may impair absorption of thyroid hormone replacement medication (e.g. levothyroxine); effect is more pronounced with low iodine intake.",
+    "severity": "caution",
+    "source": "Standard endocrinology nutrition sources",
+    "restriction_rules": [
+      {
+        "condition": "Thyroid Disorder (Hypo/Hyperthyroidism)",
+        "classification": "partially_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Can inhibit thyroid peroxidase activity and, in concentrated amounts, may impair absorption of thyroid hormone replacement medication (e.g. levothyroxine); effect is more pronounced with low iodine intake.",
+        "source": "Standard endocrinology nutrition sources"
+      }
+    ]
+  },
+  {
+    "ingredient": "Gluten (Wheat, Barley, Rye, and derivatives)",
+    "category": "protein / grain-derived",
+    "flagged_conditions": [
+      "Celiac Disease"
+    ],
+    "mechanism": "In celiac disease, gluten from wheat, barley, and rye triggers an immune-mediated intestinal injury. Management is a strict gluten-free diet; the 20-ppm value is a labeling standard, not a personal dose target.",
+    "severity": "danger",
+    "source": "Codex Alimentarius / FDA gluten-free standard (20 ppm), cross-checked",
+    "restriction_rules": [
+      {
+        "condition": "Celiac Disease",
+        "classification": "fully_restricted",
+        "tolerated_dose": "Choose foods labeled gluten-free and avoid gluten-containing wheat, barley, and rye; the labeling standard is not a moderation target.",
+        "danger_threshold": "Presence of a gluten-containing wheat, barley, or rye ingredient, or an unresolved cross-contact concern.",
+        "mechanism": "In celiac disease, gluten from wheat, barley, and rye triggers an immune-mediated intestinal injury. Management is a strict gluten-free diet; the 20-ppm value is a labeling standard, not a personal dose target.",
+        "source": "Codex Alimentarius / FDA gluten-free standard (20 ppm), cross-checked"
+      }
+    ]
+  },
+  {
+    "ingredient": "Peanut / Peanut-derived ingredients",
+    "category": "major food allergen",
+    "flagged_conditions": [
+      "Peanut Allergy",
+      "Severe Peanut Allergy",
+      "Peanut Anaphylaxis"
+    ],
+    "mechanism": "In a person with a confirmed peanut allergy, exposure can trigger an IgE-mediated allergic reaction, including anaphylaxis. Avoidance applies to oral exposure to the causative allergen.",
+    "severity": "danger",
+    "source": "FDA food allergy guidance",
+    "restriction_rules": [
+      {
+        "condition": "Peanut Allergy",
+        "classification": "fully_restricted",
+        "tolerated_dose": null,
+        "danger_threshold": null,
+        "mechanism": "Confirmed peanut allergy requires avoidance of peanut-containing foods and attention to allergen labeling/cross-contact risk.",
+        "source": "FDA food allergy guidance"
+      }
+    ]
+  }
+]

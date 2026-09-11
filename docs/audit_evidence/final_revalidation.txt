@@ -1,0 +1,15 @@
+Groq migration revalidation — 2026-09-10
+
+PASS: Python compilation
+PASS: knowledge-base JSON parsing
+PASS: no Gemini/Google-AI runtime references remain
+PASS: langchain-groq is pinned and langchain-google-genai is removed
+PASS: .env.example uses GROQ_API_KEY placeholders only
+PASS: Groq gsk_ credential pattern added to secret scanner
+PASS: external CSS separation retained
+PASS: Groq-safe JPEG OCR preprocessing and three-page PDF cap exercised locally
+
+NOT RUN: fresh dependency installation / pytest / Streamlit browser / live Groq / Tavily / LangSmith because the build sandbox could not resolve PyPI and no user credentials were embedded.
+See groq_migration_validation.txt and run the project checks on the target machine.
+
+- Dependency-light Groq migration regression tests: 6 passed.

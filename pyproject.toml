@@ -1,0 +1,18 @@
+[project]
+name = "extracare-ai"
+version = "1.0.0"
+description = "Personalized Health Intelligence & Safety Assistant — educational AI-agent course project"
+requires-python = ">=3.11,<3.14"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+exclude = ["data/vector_store", "venv", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

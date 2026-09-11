@@ -1,0 +1,17 @@
+[PASS] Python compilation
+[PASS] Knowledge-base JSON parsing
+[PASS] No Gemini/Google-AI runtime references
+[PASS] Groq integration pinned
+[PASS] Google GenAI integration removed
+[PASS] .env.example uses GROQ_API_KEY
+[PASS] Groq vision model configured
+[PASS] Local embedding model configured
+[PASS] PDF page cap configured
+[PASS] .env ignored
+[PASS] No obvious embedded credentials
+[PASS] External CSS rule
+
+OVERALL: PASS
+[PASS] Vision preprocessing sample_blood_test.png: 1 page, JPEG, 61810 bytes
+[PASS] Vision preprocessing sample_food_label.png: 1 page, JPEG, 59337 bytes
+[PASS] Five-page PDF is capped to 3 compact JPEG pages: ['JPEG', 'JPEG', 'JPEG']

@@ -1,0 +1,1 @@
+Historical preflight output removed during Groq migration. Run `py scripts/project.py check` on the target machine to generate current evidence.

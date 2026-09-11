@@ -1,0 +1,4 @@
+Groq submission package assembled on 2026-09-10.
+Google AI Studio/Gemini runtime integration was removed.
+Groq Qwen chat/vision, local Chroma embeddings, Tavily grounding, LangGraph, and LangSmith instrumentation are configured.
+Static migration validation passed. Live external-provider validation remains account-specific and must be run with the submitter's own credentials.

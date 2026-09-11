@@ -1,0 +1,22 @@
+{
+  "purpose": "Course-project evidence trust registry. Only verified labels may drive numeric thresholds or absolute restrictions.",
+  "verified_source_patterns": [
+    "ADA 2026 Standards of Care",
+    "National Kidney Foundation, CKD-EPI 2021 equation",
+    "KDIGO 2024 CKD guideline",
+    "AHA and WHO public guidance",
+    "AHA current dietary guidance",
+    "ACOG pregnancy caffeine guidance",
+    "Codex Alimentarius / FDA gluten-free standard",
+    "FDA food allergy guidance",
+    "KDIGO 2024 CKD guideline / National Kidney Foundation CKD-EPI 2021 equation",
+    "Codex Alimentarius / FDA gluten-free standard (20 ppm), cross-checked"
+  ],
+  "policy": {
+    "numeric_thresholds": "verified sources only",
+    "absolute_restrictions": "verified sources only",
+    "illustrative_general_sources": "may support educational context but not high-stakes precision"
+  },
+  "last_reviewed": "2026-09-06",
+  "notes": "Verified patterns authorize high-stakes precision only when the retrieved claim itself is supported. The application still applies diagnosis, route, quantity, and profile guards. Exact label matching is an allowlist policy, not independent clinical validation."
+}

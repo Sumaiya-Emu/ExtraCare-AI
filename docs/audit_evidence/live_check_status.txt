@@ -1,0 +1,1 @@
+NOT RUN: configure Groq, Tavily, LangSmith, and tracing, then run `py scripts/project.py live`. No live provider evidence is bundled.

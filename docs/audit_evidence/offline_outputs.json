@@ -1,0 +1,281 @@
+{
+  "validation_type": "REAL LOCAL EXECUTION; no OCR, network, or cloud-model accuracy claim",
+  "celiac_gluten": {
+    "mode": "text_check",
+    "status": "ok",
+    "report": {
+      "safety_score": 35,
+      "verdict": "Toxic",
+      "color_code": "danger",
+      "mechanism_summary": "Deterministic fast-path match for Gluten (Wheat, Barley, Rye, and derivatives) against the selected health profile.",
+      "doctor_note": "Please review Gluten (Wheat, Barley, Rye, and derivatives) together with the original report/product label and the patient's clinical history.",
+      "clinician_questions": [
+        "What follow-up, if any, is appropriate for Gluten (Wheat, Barley, Rye, and derivatives)?"
+      ],
+      "safe_alternatives": [
+        "For a medically required gluten-free diet, choose products explicitly labeled gluten-free and review cross-contact warnings."
+      ],
+      "flags": [
+        {
+          "item": "Gluten (Wheat, Barley, Rye, and derivatives)",
+          "severity": "danger",
+          "mechanism": "In celiac disease, gluten from wheat, barley, and rye triggers an immune-mediated intestinal injury. Management is a strict gluten-free diet; the 20-ppm value is a labeling standard, not a personal dose target.",
+          "source": "Codex Alimentarius / FDA gluten-free standard (20 ppm), cross-checked",
+          "restrictions": [
+            {
+              "condition": "Celiac Disease",
+              "classification": "fully_restricted",
+              "mechanism": "In celiac disease, gluten from wheat, barley, and rye triggers an immune-mediated intestinal injury. Management is a strict gluten-free diet; the 20-ppm value is a labeling standard, not a personal dose target.",
+              "tolerated_dose": "Choose foods labeled gluten-free and avoid gluten-containing wheat, barley, and rye; the labeling standard is not a moderation target.",
+              "danger_threshold": "Presence of a gluten-containing wheat, barley, or rye ingredient, or an unresolved cross-contact concern.",
+              "observed_amount": null,
+              "threshold_status": "unknown",
+              "source": "Codex Alimentarius / FDA gluten-free standard (20 ppm), cross-checked"
+            }
+          ],
+          "evidence_tags": [
+            "deterministic"
+          ],
+          "evidence_note": "Matched directly to a curated local restriction rule; ambiguous inputs fall back to RAG + LLM.",
+          "restriction_type": null
+        }
+      ],
+      "specialist_recommendations": [
+        {
+          "department": "Allergy & Immunology",
+          "rationale": "Gluten (Wheat, Barley, Rye, and derivatives) (danger) maps to the Allergy & Immunology domain and may merit clinician review.",
+          "triggered_by": "Gluten (Wheat, Barley, Rye, and derivatives)",
+          "priority": "primary"
+        }
+      ],
+      "confidence": {
+        "level": "high",
+        "score": 90,
+        "reasons": [
+          "Typed input bypasses OCR, reducing image-readability uncertainty."
+        ],
+        "can_show_verdict": true
+      }
+    },
+    "confidence": {
+      "level": "high",
+      "score": 90,
+      "reasons": [
+        "Typed input bypasses OCR, reducing image-readability uncertainty."
+      ],
+      "can_show_verdict": true
+    },
+    "extracted_summary": "Gluten",
+    "extracted_lab": null,
+    "extracted_product": null,
+    "underlying_clinical_attention": null,
+    "retrieved_sources": [
+      "Codex Alimentarius / FDA gluten-free standard (20 ppm), cross-checked"
+    ],
+    "used_live_search": false,
+    "warnings": [],
+    "metadata": {}
+  },
+  "peanut_allergy": {
+    "mode": "text_check",
+    "status": "ok",
+    "report": {
+      "safety_score": 35,
+      "verdict": "Toxic",
+      "color_code": "danger",
+      "mechanism_summary": "Deterministic fast-path match for Peanut / Peanut-derived ingredients against the selected health profile.",
+      "doctor_note": "Please review Peanut / Peanut-derived ingredients together with the original report/product label and the patient's clinical history.",
+      "clinician_questions": [
+        "What follow-up, if any, is appropriate for Peanut / Peanut-derived ingredients?"
+      ],
+      "safe_alternatives": [],
+      "flags": [
+        {
+          "item": "Peanut / Peanut-derived ingredients",
+          "severity": "danger",
+          "mechanism": "In a person with a confirmed peanut allergy, exposure can trigger an IgE-mediated allergic reaction, including anaphylaxis. Avoidance applies to oral exposure to the causative allergen.",
+          "source": "FDA food allergy guidance",
+          "restrictions": [
+            {
+              "condition": "Peanut Allergy",
+              "classification": "fully_restricted",
+              "mechanism": "Confirmed peanut allergy requires avoidance of peanut-containing foods and attention to allergen labeling/cross-contact risk.",
+              "tolerated_dose": null,
+              "danger_threshold": null,
+              "observed_amount": null,
+              "threshold_status": "unknown",
+              "source": "FDA food allergy guidance"
+            }
+          ],
+          "evidence_tags": [
+            "deterministic"
+          ],
+          "evidence_note": "Matched directly to a curated local restriction rule; ambiguous inputs fall back to RAG + LLM.",
+          "restriction_type": null
+        }
+      ],
+      "specialist_recommendations": [
+        {
+          "department": "Allergy & Immunology",
+          "rationale": "Peanut / Peanut-derived ingredients (danger) maps to the Allergy & Immunology domain and may merit clinician review.",
+          "triggered_by": "Peanut / Peanut-derived ingredients",
+          "priority": "primary"
+        }
+      ],
+      "confidence": {
+        "level": "high",
+        "score": 90,
+        "reasons": [
+          "Typed input bypasses OCR, reducing image-readability uncertainty."
+        ],
+        "can_show_verdict": true
+      }
+    },
+    "confidence": {
+      "level": "high",
+      "score": 90,
+      "reasons": [
+        "Typed input bypasses OCR, reducing image-readability uncertainty."
+      ],
+      "can_show_verdict": true
+    },
+    "extracted_summary": "Peanut",
+    "extracted_lab": null,
+    "extracted_product": null,
+    "underlying_clinical_attention": null,
+    "retrieved_sources": [
+      "FDA food allergy guidance"
+    ],
+    "used_live_search": false,
+    "warnings": [],
+    "metadata": {}
+  },
+  "general_gluten_education": {
+    "mode": "text_check",
+    "status": "ok",
+    "report": {
+      "safety_score": 100,
+      "verdict": "Safe",
+      "color_code": "safe",
+      "mechanism_summary": "Deterministic fast-path match for Gluten (Wheat, Barley, Rye, and derivatives); showing general condition-specific restriction rules because no chronic condition was selected.",
+      "doctor_note": "Please review Gluten (Wheat, Barley, Rye, and derivatives) together with the original report/product label and the patient's clinical history.",
+      "clinician_questions": [
+        "What follow-up, if any, is appropriate for Gluten (Wheat, Barley, Rye, and derivatives)?"
+      ],
+      "safe_alternatives": [
+        "For a medically required gluten-free diet, choose products explicitly labeled gluten-free and review cross-contact warnings."
+      ],
+      "flags": [
+        {
+          "item": "Gluten (Wheat, Barley, Rye, and derivatives)",
+          "severity": "info",
+          "mechanism": "In celiac disease, gluten from wheat, barley, and rye triggers an immune-mediated intestinal injury. Management is a strict gluten-free diet; the 20-ppm value is a labeling standard, not a personal dose target.",
+          "source": "Codex Alimentarius / FDA gluten-free standard (20 ppm), cross-checked",
+          "restrictions": [
+            {
+              "condition": "Celiac Disease",
+              "classification": "fully_restricted",
+              "mechanism": "In celiac disease, gluten from wheat, barley, and rye triggers an immune-mediated intestinal injury. Management is a strict gluten-free diet; the 20-ppm value is a labeling standard, not a personal dose target.",
+              "tolerated_dose": "Choose foods labeled gluten-free and avoid gluten-containing wheat, barley, and rye; the labeling standard is not a moderation target.",
+              "danger_threshold": "Presence of a gluten-containing wheat, barley, or rye ingredient, or an unresolved cross-contact concern.",
+              "observed_amount": null,
+              "threshold_status": "unknown",
+              "source": "Codex Alimentarius / FDA gluten-free standard (20 ppm), cross-checked"
+            }
+          ],
+          "evidence_tags": [
+            "deterministic"
+          ],
+          "evidence_note": "Matched directly to a curated local restriction rule; ambiguous inputs fall back to RAG + LLM. General condition context only; this restriction was not matched to the entered health profile.",
+          "restriction_type": null
+        }
+      ],
+      "specialist_recommendations": [],
+      "confidence": {
+        "level": "high",
+        "score": 90,
+        "reasons": [
+          "Typed input bypasses OCR, reducing image-readability uncertainty."
+        ],
+        "can_show_verdict": true
+      }
+    },
+    "confidence": {
+      "level": "high",
+      "score": 90,
+      "reasons": [
+        "Typed input bypasses OCR, reducing image-readability uncertainty."
+      ],
+      "can_show_verdict": true
+    },
+    "extracted_summary": "Gluten",
+    "extracted_lab": null,
+    "extracted_product": null,
+    "underlying_clinical_attention": null,
+    "retrieved_sources": [
+      "Codex Alimentarius / FDA gluten-free standard (20 ppm), cross-checked"
+    ],
+    "used_live_search": false,
+    "warnings": [],
+    "metadata": {}
+  },
+  "synthetic_numeric_delta": {
+    "items": [
+      {
+        "name": "Creatinine",
+        "previous_value": 1.2,
+        "current_value": 1.6,
+        "previous_text": null,
+        "current_text": null,
+        "unit": "mg/dL",
+        "direction": "increased",
+        "percent_change": 33.3
+      }
+    ],
+    "increased": 1,
+    "decreased": 0,
+    "unchanged": 0,
+    "changed_qualitative": 0
+  },
+  "local_diabetes_protocol": {
+    "disease_name": "Type 2 diabetes",
+    "lifestyle_habits": [
+      "Follow the monitoring and treatment plan provided by your clinician; this Fast-mode view only summarizes bundled educational evidence.",
+      "Bring medication, supplement, and recent laboratory information to clinical follow-up so recommendations can be individualized."
+    ],
+    "strict_restrictions": [
+      {
+        "item": "Dietary precaution related to HbA1c",
+        "reason": "For established diabetes, carbohydrate quality and quantity should be individualized; emphasize minimally processed, fiber-rich foods and limit sugar-sweetened beverages.",
+        "target_or_limit": null,
+        "source": "ADA 2026 Standards of Care"
+      },
+      {
+        "item": "Dietary precaution related to Fasting Glucose",
+        "reason": "Avoid sugary beverages and refined starches; monitor portion sizes of rice, bread, and potatoes.",
+        "target_or_limit": null,
+        "source": "ADA 2026 Standards of Care"
+      }
+    ],
+    "recommended_increases": [],
+    "diagnostic_tests": [
+      {
+        "test_name": "HbA1c",
+        "interval": "Individualized clinician-directed interval",
+        "reasoning": "The bundled evidence includes condition-specific interpretation ranges for HbA1c; follow-up frequency depends on severity, treatment, and clinician assessment.",
+        "source": "ADA 2026 Standards of Care"
+      },
+      {
+        "test_name": "Fasting Glucose",
+        "interval": "Individualized clinician-directed interval",
+        "reasoning": "The bundled evidence includes condition-specific interpretation ranges for Fasting Glucose; follow-up frequency depends on severity, treatment, and clinician assessment.",
+        "source": "ADA 2026 Standards of Care"
+      }
+    ],
+    "summary": "Fast mode matched Diabetes Mellitus (Type 2) to 2 bundled evidence record(s). The guidance below is intentionally conservative and does not infer a personalized treatment plan or fabricate unsupported numeric targets.",
+    "evidence_sources": [
+      "ADA 2026 Standards of Care"
+    ],
+    "used_live_search": false
+  }
+}

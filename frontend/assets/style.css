@@ -1,0 +1,453 @@
+/* ExtraCare AI — isolated stylesheet. No Python/HTML file may define styles outside this file. */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root {
+  --color-bg: #F4F7F6;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #EFF5F3;
+  --color-ink: #16231F;
+  --color-ink-soft: #4B5A56;
+  --color-primary: #1B4B4F;
+  --color-primary-light: #3E8E8A;
+  --color-primary-dark: #0F3436;
+  --color-accent: #C17F17;
+  --color-border: #DCE3E1;
+  --color-safe: #2E7D5B;
+  --color-caution: #C17F17;
+  --color-danger: #B23A2E;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --shadow-card: 0 1px 2px rgba(15, 52, 54, 0.06), 0 4px 14px rgba(15, 52, 54, 0.05);
+  --shadow-lift: 0 2px 4px rgba(15, 52, 54, 0.08), 0 8px 22px rgba(15, 52, 54, 0.09);
+}
+
+/* ---------- Base page ---------- */
+.stApp {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+[data-testid="stSidebar"] {
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+}
+[data-testid="stHeader"] {
+  background: transparent;
+}
+[data-testid="stMainBlockContainer"] {
+  padding-top: 2.2rem;
+  max-width: 980px;
+}
+
+/* Native multi-page nav sits above our own sidebar content; give it room to breathe
+   and a bottom rule so it reads as a distinct section, not a continuation of the profile form. */
+[data-testid="stSidebarNav"] {
+  padding-top: 0.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Sidebar brand + profile ---------- */
+.sidebar-brand {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 2px 0;
+}
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 16px 0 4px 0;
+}
+[data-testid="stSidebar"] [data-baseweb="select"],
+[data-testid="stSidebar"] [data-testid="stNumberInput"] input,
+[data-testid="stSidebar"] [data-testid="stTextArea"] textarea {
+  border-radius: 5px;
+}
+
+/* ---------- App header ---------- */
+.app-header {
+  padding: 8px 0 4px 0;
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: 18px;
+}
+.app-header__title {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+.app-header__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--color-ink-soft);
+  margin: 4px 0 0 0;
+}
+
+/* ---------- Home page hero ---------- */
+.hero {
+  padding: 30px 0 26px 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 8px;
+}
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-primary-light);
+  margin: 0 0 10px 0;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 12px 0;
+  line-height: 1.12;
+  max-width: 18ch;
+}
+.hero__subtitle {
+  font-size: 1.05rem;
+  color: var(--color-ink-soft);
+  max-width: 62ch;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Mode cards grid on the Home page — one flat list item per Streamlit page,
+   each with its own accent color so the four modes read as distinct, not identical. */
+.mode-card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--mode-accent, var(--color-primary));
+  border-radius: 6px;
+  padding: 20px 20px 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-card);
+  min-height: 168px;
+}
+.mode-card__icon {
+  font-size: 1.9rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-alt);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.mode-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 4px 0;
+}
+.mode-card__desc {
+  font-size: 0.94rem;
+  color: var(--color-ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+.mode-card--lab    { --mode-accent: #1B4B4F; }
+.mode-card--product { --mode-accent: #3E8E8A; }
+.mode-card--cross  { --mode-accent: #C17F17; }
+.mode-card--text   { --mode-accent: #6B5B95; }
+.mode-card--hub    { --mode-accent: #2E7D5B; }
+
+/* ---------- Mode intro / upload ---------- */
+.mode-intro {
+  font-size: 0.96rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 14px;
+  max-width: 68ch;
+}
+.personalized-for {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-primary-light);
+  background: var(--color-surface-alt);
+  border-radius: 4px;
+  padding: 6px 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+[data-testid="stFileUploader"] {
+  border: 1.5px dashed var(--color-primary-light);
+  border-radius: 6px;
+  padding: 6px;
+  background: var(--color-surface);
+}
+
+/* ---------- Buttons ---------- */
+.stButton > button {
+  background: var(--color-primary);
+  color: var(--color-surface);
+  border: none;
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  box-shadow: var(--shadow-card);
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+.stButton > button:hover {
+  background: var(--color-primary-light);
+  color: var(--color-surface);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-1px);
+}
+.stButton > button:active {
+  transform: translateY(0);
+}
+
+/* ---------- Score badge ---------- */
+.score-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 20px 24px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border-left: 6px solid var(--color-primary);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 16px;
+}
+.score-badge__value {
+  font-family: var(--font-mono);
+  font-size: 2.7rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.score-badge__scale {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--color-ink-soft);
+}
+.score-badge__verdict {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-left: auto;
+}
+
+/* Verdict modifiers — Python selects the class name only, never a color value. */
+.score-badge--safe    { border-left-color: var(--color-safe); }
+.score-badge--safe .score-badge__value,
+.score-badge--safe .score-badge__verdict    { color: var(--color-safe); }
+
+.score-badge--caution { border-left-color: var(--color-caution); }
+.score-badge--caution .score-badge__value,
+.score-badge--caution .score-badge__verdict { color: var(--color-caution); }
+
+.score-badge--danger  { border-left-color: var(--color-danger); }
+.score-badge--danger .score-badge__value,
+.score-badge--danger .score-badge__verdict  { color: var(--color-danger); }
+
+/* ---------- Result cards ---------- */
+.result-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-border);
+  border-radius: 5px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-card);
+}
+.result-card--info    { border-left-color: var(--color-primary-light); }
+.result-card--caution { border-left-color: var(--color-caution); }
+.result-card--danger  { border-left-color: var(--color-danger); }
+
+.flag-item__label {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--color-ink);
+}
+.flag-item__severity {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+  margin-left: 6px;
+}
+.flag-item__restriction {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-left: 8px;
+  letter-spacing: 0.02em;
+}
+.flag-item__restriction--full {
+  background: var(--color-danger);
+  color: var(--color-surface);
+}
+.flag-item__restriction--partial {
+  background: var(--color-surface-alt);
+  color: var(--color-caution);
+  border: 1px solid var(--color-caution);
+}
+.flag-item__mechanism {
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+  margin-top: 4px;
+}
+.flag-item__source {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--color-primary-light);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ---------- Summary / doctor note / alternatives ---------- */
+.summary-block {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin: 10px 0 16px 0;
+}
+.doctor-note-box {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+.specialist-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-card);
+}
+.specialist-card__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+.specialist-card__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+.specialist-card__rationale {
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+}
+.doctor-note-box__label {
+  font-weight: 600;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 4px;
+}
+.alt-list {
+  margin: 0 0 16px 0;
+  padding-left: 20px;
+  font-size: 0.95rem;
+}
+.protocol-list {
+  margin: 0 0 16px 0;
+  padding-left: 20px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+.protocol-list--restrict li {
+  color: var(--color-danger);
+}
+.protocol-list--increase li {
+  color: var(--color-safe);
+}
+
+/* ---------- Footer ---------- */
+.disclaimer-footer {
+  border-top: 1px solid var(--color-border);
+  margin-top: 28px;
+  padding-top: 12px;
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- ExtraCare AI smart-system additions ---------- */
+.mode-card--timeline { --mode-accent: #5B6FB5; }
+.support-strip,
+.platform-story,
+.confidence-gate {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 10px 0 16px 0;
+  color: var(--color-ink-soft);
+  line-height: 1.5;
+}
+.platform-story { margin-top: 22px; }
+.confidence-gate--blocked {
+  border-left: 5px solid var(--color-danger);
+}
+.confidence-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  padding: 4px 10px;
+  margin: 2px 0 10px 0;
+  background: var(--color-surface-alt);
+}
+.confidence-pill--high { color: var(--color-safe); border-color: var(--color-safe); }
+.confidence-pill--medium { color: var(--color-caution); border-color: var(--color-caution); }
+.confidence-pill--low { color: var(--color-danger); border-color: var(--color-danger); }
+
+/* Make nested restriction details easier to scan without introducing a new page. */
+[data-testid="stExpander"] {
+  border-color: var(--color-border);
+  border-radius: 6px;
+}
+
+/* ---------- Underlying report attention (separate from product interaction score) ---------- */
+.clinical-attention {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-primary-light);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 10px 0 8px 0;
+}
+.clinical-attention__label {
+  font-size: 0.84rem;
+  color: var(--color-ink-soft);
+}
+.clinical-attention__value {
+  font-weight: 600;
+}
+.clinical-attention--routine { border-left-color: var(--color-safe); }
+.clinical-attention--follow-up { border-left-color: var(--color-caution); }
+.clinical-attention--high,
+.clinical-attention--urgent { border-left-color: var(--color-danger); }
+.clinical-attention--routine .clinical-attention__value { color: var(--color-safe); }
+.clinical-attention--follow-up .clinical-attention__value { color: var(--color-caution); }
+.clinical-attention--high .clinical-attention__value,
+.clinical-attention--urgent .clinical-attention__value { color: var(--color-danger); }

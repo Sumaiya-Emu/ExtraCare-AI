@@ -1,0 +1,131 @@
+[
+  {
+    "_disclaimer": "Curated educational RAG starter dataset. High-stakes numeric thresholds and absolute restrictions are retained only when source-registry policy permits them. Values are not a substitute for the original guideline, laboratory reference interval, diagnosis, or clinician judgment."
+  },
+  {
+    "condition": "Diabetes Mellitus (Type 2)",
+    "biomarker": "HbA1c",
+    "safe_range": "below 5.7%",
+    "caution_range": "5.7% - 6.4% (prediabetes)",
+    "danger_threshold": "6.5% or higher is in the diabetes diagnostic range; diagnosis requires appropriate confirmation/context.",
+    "dietary_restriction": "For established diabetes, carbohydrate quality and quantity should be individualized; emphasize minimally processed, fiber-rich foods and limit sugar-sweetened beverages.",
+    "source": "ADA 2026 Standards of Care"
+  },
+  {
+    "condition": "Diabetes Mellitus (Type 2)",
+    "biomarker": "Fasting Glucose",
+    "safe_range": "70-99 mg/dL",
+    "caution_range": "100-125 mg/dL (prediabetes)",
+    "danger_threshold": "126 mg/dL or higher is in the diabetes diagnostic range; confirmation is required when clinically appropriate.",
+    "dietary_restriction": "Avoid sugary beverages and refined starches; monitor portion sizes of rice, bread, and potatoes.",
+    "source": "ADA 2026 Standards of Care"
+  },
+  {
+    "condition": "Chronic Kidney Disease (CKD)",
+    "biomarker": "eGFR (calculated, CKD-EPI 2021)",
+    "safe_range": "G1: 90 or higher; G2: 60-89 mL/min/1.73m2. These categories alone do not exclude CKD when other kidney-damage markers are present.",
+    "caution_range": "G3a: 45-59; G3b: 30-44 mL/min/1.73m2. Chronicity/context is required for CKD classification.",
+    "danger_threshold": "G4: 15-29; G5: below 15 mL/min/1.73m2. A single result does not by itself establish chronicity.",
+    "dietary_restriction": "Nutrition in CKD is individualized. Sodium reduction is commonly advised; potassium, phosphorus, and protein targets should depend on kidney stage, laboratory values, medications, and clinician/dietitian guidance rather than blanket avoidance.",
+    "source": "KDIGO 2024 CKD guideline / National Kidney Foundation CKD-EPI 2021 equation"
+  },
+  {
+    "condition": "Chronic Kidney Disease (CKD)",
+    "biomarker": "Serum Potassium",
+    "safe_range": "Interpret using the reporting laboratory reference interval and clinical context.",
+    "caution_range": "Mild elevation requires contextual review, including kidney function and medications.",
+    "danger_threshold": "No single universal emergency threshold is encoded in this prototype; marked elevation or symptoms requires clinician-directed assessment.",
+    "dietary_restriction": "Do not impose blanket potassium restriction from eGFR alone. Review serum potassium, medications, total intake, and clinician/dietitian advice.",
+    "source": "KDIGO 2024 CKD guideline"
+  },
+  {
+    "condition": "Hypertension",
+    "biomarker": "Dietary Sodium Load",
+    "safe_range": "under 1500 mg/day for hypertension, diabetes, CKD, or age over 50 (AHA); under 2000 mg/day general population ceiling (WHO, ~5g salt)",
+    "caution_range": "1500-2300 mg/day for at-risk patients; 2000-2300 mg/day general population",
+    "danger_threshold": "above 2300 mg/day for at-risk patients (hypertension/CKD/diabetes); above 4000 mg/day or any single very-high-sodium packaged meal for anyone",
+    "dietary_restriction": "Limit processed/packaged foods, salted snacks, and sodium-based preservatives (e.g. sodium benzoate, sodium nitrite). At-risk patients (this condition) should use the stricter 1500 mg ceiling, not the general-population number.",
+    "source": "AHA and WHO public guidance"
+  },
+  {
+    "condition": "Liver Disease (incl. Fatty Liver)",
+    "biomarker": "ALT (Alanine Aminotransferase)",
+    "safe_range": "7-35 U/L (adult female), 7-40 U/L (adult male), approximate lab-dependent",
+    "caution_range": "up to 2x the upper reference limit",
+    "danger_threshold": "more than 2x the upper reference limit",
+    "dietary_restriction": "Limit fructose-heavy beverages, fried foods, and saturated fat; avoid alcohol entirely.",
+    "source": "General clinical reference, not independently re-verified"
+  },
+  {
+    "condition": "Gout / Hyperuricemia",
+    "biomarker": "Serum Uric Acid",
+    "safe_range": "3.5-7.2 mg/dL (adult male), 2.6-6.0 mg/dL (adult female)",
+    "caution_range": "up to 8.5 mg/dL",
+    "danger_threshold": "above 8.5 mg/dL or recurrent gout flares",
+    "dietary_restriction": "Limit organ meats, shellfish, red meat, and high-fructose beverages; avoid excess alcohol, especially beer.",
+    "source": "General clinical reference, not independently re-verified"
+  },
+  {
+    "condition": "Dyslipidemia",
+    "biomarker": "LDL Cholesterol",
+    "safe_range": "below 100 mg/dL",
+    "caution_range": "100-159 mg/dL",
+    "danger_threshold": "160 mg/dL or higher, or above 70 mg/dL with existing cardiovascular disease",
+    "dietary_restriction": "Limit saturated and trans fats, fried snacks, and palm-oil-heavy processed foods.",
+    "source": "ATP III categories, not independently re-verified"
+  },
+  {
+    "condition": "Pregnancy",
+    "biomarker": "General precaution (no single biomarker)",
+    "safe_range": "n/a",
+    "caution_range": "n/a",
+    "danger_threshold": "n/a",
+    "dietary_restriction": "Avoid unpasteurized dairy, high-mercury fish, excess caffeine (above ~200 mg/day), alcohol, and raw/undercooked meat or eggs.",
+    "source": "General OB guidance, not independently re-verified"
+  },
+  {
+    "condition": "Asthma",
+    "biomarker": "General precaution (sulfite sensitivity, no single biomarker)",
+    "safe_range": "n/a",
+    "caution_range": "n/a",
+    "danger_threshold": "n/a",
+    "dietary_restriction": "5-10% of people with asthma are sensitive to sulfite preservatives (E220-228: sodium/potassium bisulfite, metabisulfite), which release SO2 gas and can trigger bronchoconstriction. Found in dried fruit, wine/beer, pickled foods, bottled lemon/lime juice, and processed shrimp.",
+    "source": "AAFA / WebMD sulfite-asthma guidance"
+  },
+  {
+    "condition": "Heart Disease (Cardiovascular)",
+    "biomarker": "Dietary saturated fat / sodium load",
+    "safe_range": "saturated fat under 6% of daily calories; sodium under 1500 mg/day (AHA)",
+    "caution_range": "saturated fat 6-10% of calories; sodium 1500-2300 mg/day",
+    "danger_threshold": "No universal food-level danger threshold is encoded; overall dietary pattern and individual cardiovascular risk determine targets.",
+    "dietary_restriction": "Favor an overall heart-healthy eating pattern; reduce saturated fat and excess sodium according to individualized cardiovascular guidance.",
+    "source": "AHA current dietary guidance"
+  },
+  {
+    "condition": "Thyroid Disorder (Hypo/Hyperthyroidism)",
+    "biomarker": "General precaution (goitrogen/medication-interaction, no single biomarker)",
+    "safe_range": "n/a",
+    "caution_range": "n/a",
+    "danger_threshold": "n/a",
+    "dietary_restriction": "Large amounts of raw goitrogenic foods (soy, cruciferous vegetables) can interfere with thyroid hormone production, especially with low iodine intake; cooking largely deactivates this. Calcium, iron, and magnesium supplements should be taken at least 4 hours apart from thyroid medication (e.g. levothyroxine), since they impair its absorption.",
+    "source": "Standard endocrinology nutrition sources"
+  },
+  {
+    "condition": "Celiac Disease",
+    "biomarker": "Dietary Gluten Exposure",
+    "safe_range": "verified gluten-free foods, under 20 ppm (FDA/Codex Alimentarius gluten-free labeling standard)",
+    "caution_range": "unlabeled foods with cross-contamination risk (shared equipment/facilities with wheat/barley/rye)",
+    "danger_threshold": "any food containing wheat, barley, or rye — this is a FULLY RESTRICTED condition, not dose-moderated",
+    "dietary_restriction": "Strict, permanent, lifelong gluten-free diet is the only effective treatment — there is no safe moderate intake, unlike dose-dependent conditions. Oats are controversial: safe for most, but cross-contamination during growing/milling is common, and a small subset of celiacs react even to pure oats.",
+    "source": "Codex Alimentarius / FDA gluten-free standard (20 ppm), NYU Langone dietary guidance, cross-checked"
+  },
+  {
+    "condition": "Chronic Kidney Disease (CKD)",
+    "biomarker": "Urine Albumin-to-Creatinine Ratio (UACR)",
+    "safe_range": "below 30 mg/g (KDIGO A1: normal to mildly increased)",
+    "caution_range": "30-300 mg/g (KDIGO A2: moderately increased)",
+    "danger_threshold": "above 300 mg/g (KDIGO A3: severely increased)",
+    "dietary_restriction": "UACR is interpreted with eGFR and clinical context; persistent albuminuria warrants clinician review rather than a diet-only conclusion.",
+    "source": "KDIGO 2024 CKD guideline albuminuria categories"
+  }
+]
