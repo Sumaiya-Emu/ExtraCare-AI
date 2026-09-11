@@ -1,4 +1,4 @@
-"""Run synthetic-input cloud smoke tests and retain truthful output evidence.
+﻿"""Run synthetic-input cloud smoke tests and retain truthful output evidence.
 
 Run only after configuring your own keys. Real API requests may incur provider charges.
 This checks execution, not clinical validation or complete OCR accuracy.
@@ -49,7 +49,8 @@ def main() -> int:
     from backend.models.schemas import PatientProfile
     from backend.tools.search_tool import search_web
     from langsmith import Client
-    from langsmith.run_helpers import tracing_context, wait_for_all_tracers
+    from langsmith.run_helpers import tracing_context
+from langchain_core.tracers.langchain import wait_for_all_tracers
 
     @traceable(
         "chain",
@@ -134,9 +135,10 @@ def main() -> int:
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(results, indent=2, default=str), encoding="utf-8")
-    print("Live execution:", results["status"], "— inspect", args.output)
+    print("Live execution:", results["status"], "â€” inspect", args.output)
     return 0 if results["status"] == "passed" else 1
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
