@@ -1,63 +1,103 @@
 # ExtraCare AI
 
-**Personalized Health Intelligence & Safety Assistant**
+**Personalized Health Information & Safety Assistant**
 
-ExtraCare AI is a real-world, multi-agent healthcare decision-support course-project prototype. It combines a user's health profile with diagnostic reports, product labels, retrieved evidence, and current external information to produce structured, traceable educational guidance.
+ExtraCare AI is a health-focused AI application that helps users understand medical reports, product labels, ingredients, and general health information in one place.
 
-> **Important:** ExtraCare AI is not a medical device and does not diagnose, prescribe, or replace licensed clinical care.
+The app uses one shared health profile across its different features. It can read uploaded documents, retrieve relevant information, search the web when needed, and use different AI agents to prepare the result.
+
+> **Important:** ExtraCare AI is an educational project. It does not diagnose diseases, prescribe treatment, or replace professional medical care.
 
 ---
 
 ## 1. Problem & Target Users
 
-### The problem
-Health information is often fragmented. A person may receive a lab report, read a food or skincare label, search several sources, and still struggle to understand how those pieces relate to the same health context.
+### The Problem
 
-### Target users
-Adults who want help organizing and understanding the relationship between:
+Health information can be difficult to understand because it often comes from different sources.
 
-- their health profile,
-- written diagnostic reports,
-- food / supplement / skincare labels,
-- previous results in the current session,
-- and evidence retrieved from the project knowledge base or live search.
+For example, a user may have a medical report, a food or skincare label, and information from different websites. It can be difficult to understand how these things relate to the same health situation.
 
-### Why AI is useful
-ExtraCare AI combines OCR/document extraction, retrieval, search, structured reasoning, specialized agents, and deterministic safety checks in one connected workflow instead of acting like a general-purpose chatbot.
+ExtraCare AI brings this information together and presents it in a simpler way.
+
+### Target Users
+
+The project is mainly designed for adults who want help understanding:
+
+- their basic health profile
+- diagnostic reports
+- food, supplement, or skincare labels
+- individual ingredients
+- recent results from the current session
+- information from the local knowledge base or web search
+
+### Why I Used AI
+
+Different types of information need different types of processing.
+
+ExtraCare AI can read uploaded files, retrieve useful information, search external sources when needed, and use different agents for different tasks.
 
 ---
 
-## 2. Main User Workflows
+## 2. Main Features
 
-ExtraCare AI currently provides seven connected modes:
+ExtraCare AI has seven main features.
 
-1. **Lab Decoder** — analyzes blood panels, urinalysis/UACR, and written radiology reports.
-2. **Product Sentinel** — reviews food, supplement/medicine ingredient labels, and skincare/cosmetic labels.
-3. **Food Cross-Match** — combines a diagnostic report with a food label.
-4. **Skincare Cross-Match** — combines a diagnostic report with a skincare/cosmetic label.
-5. **Quick Ingredient Check** — fast typed-input or label-based ingredient checking.
-6. **Disease Care & Protocol Hub** — general evidence-grounded disease education.
-7. **My Health Timeline** — session-only activity history and change tracking.
+### Lab Decoder
 
-All modes reuse the same Core Health Profile so the system behaves as one connected application rather than seven disconnected mini-tools.
+Helps users understand blood reports, urinalysis/UACR reports, and written radiology reports.
+
+### Product Sentinel
+
+Checks food, supplement, medicine ingredient, and skincare labels using the user's health profile.
+
+### Food Cross-Match
+
+Checks a diagnostic report together with a food product.
+
+### Skincare Cross-Match
+
+Checks a diagnostic report together with a skincare or cosmetic product.
+
+### Quick Ingredient Check
+
+Allows the user to type an ingredient name or upload a label for a quick check.
+
+### Disease Care & Protocol Hub
+
+Provides general information about selected health conditions.
+
+### My Health Timeline
+
+Keeps recent activity and results during the current session.
+
+All of these features use the same **Core Health Profile**.
 
 ---
 
 ## 3. Application Preview
 
-> Add 3–5 clean screenshots here after saving them under `docs/screenshots/`.
+### Home
 
-| Home | Lab Decoder |
-|---|---|
-| `docs/screenshots/home.png` | `docs/screenshots/lab_decoder.png` |
+![ExtraCare AI Home](docs/screenshots/home.png)
 
-| Product Sentinel | Cross-Match |
-|---|---|
-| `docs/screenshots/product_sentinel.png` | `docs/screenshots/cross_match.png` |
+### Lab Decoder
+
+![Lab Decoder](docs/screenshots/lab_decoder.png)
+
+### Product Sentinel
+
+![Product Sentinel](docs/screenshots/product_sentinel.png)
+
+### Cross-Match
+
+![Cross-Match](docs/screenshots/cross_match.png)
 
 ---
 
-## 4. High-Level Architecture
+## 4. How the System Works
+
+The general workflow is:
 
 ```text
 User
@@ -66,175 +106,213 @@ Streamlit Frontend
   ↓
 Core Health Profile
   ↓
-Router / Workflow
+Router
   ↓
-Specialized Agent
-  ├── OCR / PDF Extraction
-  ├── RAG Retrieval
-  ├── Chroma Vector Store
-  ├── Tavily Search
-  └── Groq LLM
+Selected Agent
   ↓
-Confidence + Safety / Risk Checks
+OCR / RAG / Search / Tools
   ↓
-Final Structured Result
+AI Analysis
   ↓
-LangSmith Trace
+Confidence and Safety Checks
+  ↓
+Final Result
 ```
 
-### Main execution patterns
+For uploaded files:
 
 ```text
-User Input
-  → Router
-  → Agent
-  → Tool / Search / RAG
-  → Processing
-  → Final Response
+File Upload
+  ↓
+OCR or Text Extraction
+  ↓
+Information Extraction
+  ↓
+Retrieval or Web Search
+  ↓
+Agent Analysis
+  ↓
+Final Result
 ```
 
-```text
-User Upload
-  → OCR / Text Extraction
-  → Information Extraction
-  → Retrieval / Search
-  → AI Analysis
-  → Structured Result
-```
+LangSmith is used to trace important workflow steps.
 
 ---
 
-## 5. AI, Agents & Tools
+## 5. Agents
 
-### LLM provider
-This build uses **GroqCloud** for chat and vision/OCR workloads.
+Different agents are used for different tasks.
 
-- Chat / reasoning model: `qwen/qwen3.6-27b`
-- Vision / OCR model: `qwen/qwen3.6-27b`
-
-### Specialized agents
-The backend contains separate agent responsibilities such as:
+The main agents include:
 
 - Router Agent
 - Lab Agent
 - Product Agent
 - Cross-Match Agent
 - Disease Hub Agent
-- Arbiter / final-result logic
+- Arbiter / final result logic
 
-Agents are used only where they have a clear responsibility.
+The **Router Agent** selects the correct workflow.
 
-### Tooling
-The system integrates:
+The **Lab Agent** works with diagnostic reports.
 
-- Groq LLM and vision/OCR
-- Tavily live search
+The **Product Agent** works with product information.
+
+The **Cross-Match Agent** checks two related inputs together.
+
+Each agent has a specific role in the application.
+
+---
+
+## 6. LLM and Tools
+
+### LLM Provider
+
+The project uses **GroqCloud** for the main AI processing.
+
+Current model settings:
+
+```text
+Chat model: qwen/qwen3.6-27b
+Vision/OCR model: qwen/qwen3.6-27b
+```
+
+### Main Tools
+
+The application uses:
+
+- Groq for AI processing
+- Tavily for web search
+- OCR and PDF extraction
 - RAG retrieval
-- Chroma vector storage
-- Local embeddings
+- Chroma vector database
+- local embeddings
 - LangSmith tracing
 
 ---
 
-## 6. OCR & Document Handling
+## 7. OCR and Document Processing
 
-Uploaded images and scanned documents can be processed through OCR/vision.
+ExtraCare AI can work with uploaded images, scanned documents, and machine-readable PDFs.
 
-For machine-readable PDFs, the application prefers local text/table extraction when possible. This reduces unnecessary vision calls and makes document processing more reliable.
+If a PDF already contains readable text, the application can extract the text directly.
 
-Example supported inputs include:
+For images or scanned documents, the OCR/vision workflow can read the visible information.
 
-- blood reports,
-- urinalysis/UACR reports,
-- written radiology reports,
-- food labels,
-- supplement / medicine ingredient labels,
-- skincare labels.
+Example inputs include:
+
+- blood reports
+- urinalysis/UACR reports
+- written radiology reports
+- food labels
+- supplement labels
+- medicine ingredient labels
+- skincare labels
 
 ---
 
-## 7. RAG & Vector Database
+## 8. RAG and Vector Database
 
-ExtraCare AI includes retrieval-based functionality.
+The project uses **RAG** to retrieve useful information before the final AI analysis.
 
-### Knowledge sources
-The bundled knowledge base is stored under:
+The local knowledge base is stored in:
 
 ```text
 data/knowledge_base/
 ```
 
-### Vector storage
-The project uses **Chroma** for semantic retrieval.
-
-### Retrieval flow
+The basic retrieval flow is:
 
 ```text
-Knowledge documents
-  → chunking / prepared records
-  → local embeddings
-  → Chroma vector store
-  → semantic retrieval
-  → retrieved evidence
-  → agent / LLM context
+Knowledge Base
+  ↓
+Embeddings
+  ↓
+Chroma Vector Store
+  ↓
+Relevant Information
+  ↓
+Agent Context
+  ↓
+Final Analysis
 ```
 
-The system does not treat missing knowledge-base evidence as proof that something is safe.
+The project uses **Chroma** as the vector database.
+
+The local embedding model converts text into numerical representations so that related information can be found even when the wording is different.
 
 ---
 
-## 8. Internet Search & Grounding
+## 9. Web Search
 
-When current or external information is needed, ExtraCare AI can use **Tavily** search.
+ExtraCare AI can use **Tavily** when current or external information is needed.
 
-The intended flow is:
+The general search flow is:
 
 ```text
-User request
-  → search decision
-  → Tavily retrieval
-  → grounded context
-  → agent synthesis
-  → final result
+User Request
+  ↓
+Search Decision
+  ↓
+Tavily Search
+  ↓
+Search Results
+  ↓
+Agent Analysis
+  ↓
+Final Response
 ```
 
-Search usage is kept traceable through the analysis workflow.
+Web search is used only when the workflow needs external information.
 
 ---
 
-## 9. Safety & Confidence
+## 10. Safety and Confidence
 
-ExtraCare AI applies deterministic safety and confidence checks around AI output.
+Because the project works with health-related information, several checks are used around the AI output.
 
-Examples include:
+These include:
 
-- input validation,
-- confidence gating,
-- profile-aware restrictions,
-- risk scoring,
-- safe fallback behavior when analysis fails,
-- conservative handling when evidence is insufficient.
+- input validation
+- confidence checks
+- health-profile checks
+- risk checks
+- fallback responses
+- handling incomplete information
 
-The project is designed to fail closed rather than publish an unreliable clinical-style conclusion.
+If there is not enough reliable information, the application can stop the analysis instead of guessing.
+
+The project is designed for educational support, not medical diagnosis or treatment.
 
 ---
 
-## 10. LangSmith Tracing
+## 11. LangSmith Tracing
 
-Important executions are instrumented with LangSmith tracing.
+LangSmith is used to inspect important workflows inside ExtraCare AI.
 
-Representative traces should demonstrate:
+It allows me to see steps such as:
 
-1. **Lab Decoder**  
-   `Router → OCR/Extraction → RAG → Lab Agent → Confidence → Risk → Arbiter`
+- routing
+- agent execution
+- OCR/tool calls
+- retrieval
+- web search
+- model execution
+- final processing
 
-2. **Product Sentinel**  
-   `Router → OCR → RAG + Tavily → Product Agent → Confidence → Risk → Arbiter`
+### Lab Decoder Trace
 
-3. **Cross-Match**  
-   `Parallel extraction → retrieval → Cross-Match Agent → Risk → Arbiter`
+[Open Lab Decoder LangSmith Trace](https://smith.langchain.com/public/7645d971-211a-4911-b87c-3fa1c5f8e9b4/r)
 
-For final submission, share only synthetic/demo traces and place the links in:
+### Product Sentinel Trace
+
+[Open Product Sentinel LangSmith Trace](https://smith.langchain.com/public/13de5e7f-b95a-4ca5-bee6-31ae084383b7/r)
+
+### Cross-Match Trace
+
+[Open Cross-Match LangSmith Trace](https://smith.langchain.com/public/a368eb8b-dafc-48e4-a275-76614c0888db/r)
+
+The same submission links are also available in:
 
 ```text
 SUBMISSION_LINKS.md
@@ -242,29 +320,30 @@ SUBMISSION_LINKS.md
 
 ---
 
-## 11. Tech Stack
+## 12. Tech Stack
 
 | Area | Technology |
 |---|---|
 | Frontend | Streamlit |
 | Backend | Python |
-| Agent / workflow orchestration | LangGraph / project workflow layer |
+| Workflow | LangGraph |
 | LLM | GroqCloud |
-| Chat / Vision model | Qwen 3.6 27B |
-| OCR | Groq vision + local PDF/text extraction |
+| Chat / Vision Model | Qwen 3.6 27B |
+| OCR | Groq Vision + local text extraction |
 | Search | Tavily |
-| RAG | Project retrieval pipeline |
-| Vector DB | Chroma |
-| Embeddings | Local embedding model |
+| RAG | Local retrieval pipeline |
+| Vector Database | Chroma |
+| Embeddings | all-MiniLM-L6-v2 |
 | Tracing | LangSmith |
 | Testing | Pytest |
 
 ---
 
-## 12. Project Structure
+## 13. Project Structure
 
 ```text
 ExtraCare-AI/
+│
 ├── backend/
 │   ├── agents/
 │   ├── config/
@@ -285,8 +364,7 @@ ExtraCare-AI/
 │   └── sample_images/
 │
 ├── docs/
-│   ├── screenshots/
-│   └── ...
+│   └── screenshots/
 │
 ├── scripts/
 ├── tests/
@@ -301,24 +379,24 @@ ExtraCare-AI/
 
 ---
 
-## 13. Setup
+## 14. Setup
 
 ### Requirements
 
-- Python 3.11+ recommended
+- Python 3.11 or newer
 - Git
 - Groq API key
 - Tavily API key
 - LangSmith API key
 
-### Clone
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Sumaiya-Emu/ExtraCare-AI.git
 cd ExtraCare-AI
 ```
 
-### Setup
+### Setup the Project
 
 ```powershell
 py scripts/project.py setup
@@ -330,13 +408,13 @@ Create the local environment file:
 Copy-Item .env.example .env
 ```
 
-Then add your own private keys to `.env`.
+Then add your own API keys to `.env`.
 
-> Never commit `.env` or real API keys.
+> Never upload the real `.env` file or API keys to GitHub.
 
 ---
 
-## 14. Environment Variables
+## 15. Environment Variables
 
 Example:
 
@@ -360,58 +438,68 @@ DEFAULT_ANALYSIS_MODE=fast
 
 ---
 
-## 15. Run
+## 16. Run the Application
 
-Validate the project:
+First, check the project:
 
 ```powershell
 py scripts/project.py check
 ```
 
-Run live integration checks:
-
-```powershell
-py scripts/project.py live
-```
-
-Start the application:
+Then start the application:
 
 ```powershell
 py scripts/project.py run
 ```
 
-Then open:
+The application should open at:
 
 ```text
 http://localhost:8501
 ```
 
+If needed, Streamlit can also be started directly:
+
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run frontend\app.py
+```
+
 ---
 
-## 16. Tests
+## 17. Tests
+
+Run the tests with:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest
 ```
 
+The project includes tests for important application and workflow behavior.
+
 ---
 
-## 17. Final Submission Links
+## 18. Submission Links
 
-Final links are maintained in:
+The final submission links are available in:
 
 ```text
 SUBMISSION_LINKS.md
 ```
 
-They should include:
+They include:
 
 - GitHub repository
 - English YouTube presentation
-- representative LangSmith trace links
+- Lab Decoder LangSmith trace
+- Product Sentinel LangSmith trace
+- Cross-Match LangSmith trace
 
 ---
 
-## 18. Academic / Safety Note
+## 19. Safety Note
 
-This repository is an educational course-project prototype. The bundled demo content should use synthetic test data only. Do not use the application as a replacement for professional medical advice, diagnosis, treatment, or emergency care.
+ExtraCare AI was created as an educational course project.
+
+The demonstration uses sample or synthetic data.
+
+The application is not intended to replace professional medical advice, diagnosis, treatment, or emergency care.

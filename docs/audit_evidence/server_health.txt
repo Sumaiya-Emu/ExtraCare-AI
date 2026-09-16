@@ -1,2 +1,0 @@
-POST-MIGRATION STREAMLIT HEALTH: not run in this build sandbox.
-Run `py scripts/project.py run` on the final machine and visually inspect every main workflow before recording the demo.

@@ -1,2 +1,0 @@
-POST-MIGRATION STATUS: not run in the build sandbox because outbound PyPI DNS was unavailable.
-Run `py scripts/project.py setup` and then `.\.venv\Scripts\python.exe -m pip check` on the final Windows machine.

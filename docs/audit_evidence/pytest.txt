@@ -1,3 +1,0 @@
-POST-MIGRATION PYTEST: not run in the build sandbox because the migrated runtime dependencies could not be installed while PyPI DNS was unavailable.
-The earlier pre-migration test count is intentionally not carried forward as Groq-build evidence.
-Run `py scripts/project.py check` after setup on the final machine.
