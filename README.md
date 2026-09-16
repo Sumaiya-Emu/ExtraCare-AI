@@ -79,19 +79,19 @@ All of these features use the same **Core Health Profile**.
 
 ### Home
 
-![ExtraCare AI Home](docs/screenshots/home.png)
+![ExtraCare AI Home]
 
 ### Lab Decoder
 
-![Lab Decoder](docs/screenshots/lab_decoder.png)
+![Lab Decoder]
 
 ### Product Sentinel
 
-![Product Sentinel](docs/screenshots/product_sentinel.png)
+![Product Sentinel]
 
 ### Cross-Match
 
-![Cross-Match](docs/screenshots/cross_match.png)
+![Cross-Match]
 
 ---
 
