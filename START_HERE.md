@@ -1,7 +1,3 @@
-# ExtraCare AI — complete project package
-
-This ZIP contains the complete source, seven feature modules, sample images, curated knowledge base, dependency files, setup/run commands, tests, audit evidence, English presentation guide and submission checklist.
-
 **Package status:** provider migration and static validation completed. Your API credentials, dependency installation, live validation, browser review and actual submission URLs are still required. Do not describe the Groq build as fully live-validated until those steps are complete.
 
 ## Windows — easiest setup
